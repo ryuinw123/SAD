@@ -1,11 +1,20 @@
 package creational;
 
 import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Iterator;
 
-public class XMLBookMetaDataExporter extends BookMetadataExporter{
+public class XMLBookMetadataExporter extends BookMetadataExporter{
     private XMLBookMetadataFormatter XMLBook;
+
+    public XMLBookMetadataExporter(){
+        try {
+            XMLBook = new XMLBookMetadataFormatter();
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public void export(PrintStream stream) throws ParserConfigurationException {

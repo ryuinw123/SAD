@@ -7,14 +7,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Current usage
+//         Current usage
 //        BookMetadataFormatter formatter = null;
 //        try {
 //            formatter = BookMetadataFormatterFactory.getBookMetadataFormatter(BookMetadataFormatterFactory.Format.JSON);
 //            formatter.append(TestData.dragonBook);
 //            formatter.append(TestData.dinosaurBook);
-//            formatter.reset();
-//            formatter.append(TestData.GoFBook);
 //            System.out.print(formatter.getMetadataString());
 //        } catch (IOException e) {
 //            e.printStackTrace();
@@ -22,11 +20,17 @@ public class Main {
 //            e.printStackTrace();
 //        }
 
+
+
+        System.out.println();
+        System.out.println();
+
+
         // Expected usage
         BookMetadataExporter exporter = new JSONBookMetadataExporter();
         try{
-            exporter.add(TestData.dinosaurBook);
             exporter.add(TestData.dragonBook);
+            exporter.add(TestData.dinosaurBook);
             exporter.export(System.out);
         }
         catch (ParserConfigurationException e) {

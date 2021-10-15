@@ -5,9 +5,6 @@ import java.util.Iterator;
 
 public class JSONBookMetadataExporter extends BookMetadataExporter{
     private JSONBookMetadataFormatter JSONBook;
-    public JSONBookMetadataExporter() {
-        JSONBook = new JSONBookMetadataFormatter();
-    }
 
     @Override
     public void export(PrintStream stream) {

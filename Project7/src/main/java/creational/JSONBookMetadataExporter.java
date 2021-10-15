@@ -14,6 +14,6 @@ public class JSONBookMetadataExporter extends BookMetadataExporter{
         {
             JSONBook.append(bookIterator.next());
         }
-        stream.println(JSONBook.getMetadataString());
+        stream.print(JSONBook.getMetadataString());
     }
 }

@@ -24,6 +24,6 @@ public class XMLBookMetadataExporter extends BookMetadataExporter{
         {
             XMLBook.append(bookIterator.next());
         }
-        stream.println(XMLBook.getMetadataString());
+        stream.print(XMLBook.getMetadataString());
     }
 }

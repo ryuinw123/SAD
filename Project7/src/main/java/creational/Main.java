@@ -23,7 +23,7 @@ public class Main {
 //        }
 
         // Expected usage
-        BookMetadataExporter exporter = new XMLBookMetadataExporter();
+        BookMetadataExporter exporter = new CSVBookMetadataExporter();
         try{
             exporter.add(TestData.sailboatBook);
             exporter.add(TestData.GoFBook);

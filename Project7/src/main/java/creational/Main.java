@@ -22,10 +22,6 @@ public class Main {
 
 
 
-        System.out.println();
-        System.out.println();
-
-
         // Expected usage
         BookMetadataExporter exporter = new JSONBookMetadataExporter();
         try{

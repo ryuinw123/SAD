@@ -3,7 +3,6 @@ package creational;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-import java.io.StringWriter;
 import java.util.Arrays;
 
 public class JSONBookMetadataFormatter implements BookMetadataFormatter {

@@ -1,6 +1,7 @@
 package creational;
 
 import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Iterator;
 

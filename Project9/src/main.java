@@ -51,6 +51,7 @@ public class main {
         //สร้าง Publisher กับ Subscriber
         StringPublisher publisher = new StringPublisher();
         NumberSubscriber a = new NumberSubscriber();
+        NumberSubscriber d = new NumberSubscriber();
         AlphabetSubscriber b = new AlphabetSubscriber();
         SymbolSubscriber c = new SymbolSubscriber();
 
@@ -58,6 +59,7 @@ public class main {
         publisher.subscribe(a);
         publisher.subscribe(b);
         publisher.subscribe(c);
+        publisher.subscribe(d);
 
         Scanner myObj = new Scanner(System.in);
         System.out.println("Enter word enter cancel to cancel Program");//อยากให้หยุดโปรแกรมให้พิมพ์ว่า cancel
@@ -68,6 +70,6 @@ public class main {
             publisher.submit(username);
             username = myObj.nextLine();
         }
-        
+
     }
 }

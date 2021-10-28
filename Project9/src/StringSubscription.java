@@ -46,6 +46,7 @@ public class StringSubscription implements Flow.Subscription {
     //รับค่าจาก String Publisher ใส่ค่าให้ Arraylist Subscription
     public void add(String message){
         stringStream.add(message);
+        //เช็คว่าเคยมี Request ค้างไว้หรือเปล่า ถ้ามีให้ส่งค่าไปที่ Subscriber
         if (isRequest) {
             this.request(1);
         }

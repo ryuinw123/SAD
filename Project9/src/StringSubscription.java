@@ -8,12 +8,15 @@ public class StringSubscription implements Flow.Subscription {
     private ArrayList<String> stringStream;
     private String want;
 
+
+
     public StringSubscription(StringSubscriber subscriber) {
         this.subscriber = subscriber;
         this.stringStream = new ArrayList<>();
         this.want = subscriber.getWant();
     }
 
+    //ฟังก์ชั่น request เป็นการส่งค่าจาก Arraylist stringStream ให้ Subscriber
     @Override
     public void request(long n) {
         if (n != 0 && !completed && stringStream.size() != 0) {
@@ -35,6 +38,7 @@ public class StringSubscription implements Flow.Subscription {
         completed = true;
     }
 
+    //รับค่าจาก String Publisher ใส่ค่าให้ Arraylist Subscription
     public void add(String message){
         stringStream.add(message);
         this.request(1);

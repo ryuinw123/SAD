@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
-
+        //สร้างไฟล์ใหม่
         try {
             File myObj = new File("Alphabet.txt");
             if (myObj.createNewFile()) {
@@ -29,12 +29,13 @@ public class main {
             e.printStackTrace();
         }
 
-
+        //สร้าง Publisher กับ Subscriber
         StringPublisher publisher = new StringPublisher();
         NumberSubscriber a = new NumberSubscriber();
         AlphabetSubscriber b = new AlphabetSubscriber();
         SymbolSubscriber c = new SymbolSubscriber();
 
+        //Subscribe
         publisher.subscribe(a);
         publisher.subscribe(b);
         publisher.subscribe(c);
@@ -42,6 +43,7 @@ public class main {
         Scanner myObj = new Scanner(System.in);
         System.out.println("Enter word enter cancel to cancel Program");//อยากให้หยุดโปรแกรมให้พิมพ์ว่า cancel
 
+        //Input
         String username = myObj.nextLine();
         while (!username.equals("cancel")){
             publisher.submit(username);

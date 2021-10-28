@@ -9,8 +9,8 @@ public class StringPublisher implements Flow.Publisher {
     private ArrayList<StringSubscription> subscriptions;
 
     public StringPublisher() {
-        subscribers = new ArrayList<>();
-        subscriptions = new ArrayList<>();
+        subscribers = new ArrayList<>(); //เป็นตัวที่เก็บไว้ว่าตัว Publisher มีอะไร Subscribe บ้าง เพื่อเช็คว่าซ้ำไหม
+        subscriptions = new ArrayList<>(); //เก็บตัว subscriptions ไว้ เมื่อกรองข้อมูลเสร็จแล้วจะส่งข้อมูลให้ subscriptions
     }
 
     @Override
@@ -28,6 +28,9 @@ public class StringPublisher implements Flow.Publisher {
 }
 
     public void submit(String message){
+
+        // กรอง String เพื่อดูว่ามีอะไรอยู่ในนั้นบ้าง
+
         Pattern symbolPattern = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE);
         Pattern alphabetPattern = Pattern.compile("[a-z]",Pattern.CASE_INSENSITIVE);
         Pattern numericPattern = Pattern.compile("[0-9]+");
@@ -41,7 +44,7 @@ public class StringPublisher implements Flow.Publisher {
         boolean n = numericMatcher.find();
 
 
-
+        //ส่ง String ให้ตัว Subscription ของ Subscriber ที่ต้องการ
         if (s){
             System.out.println("Has symbol");
             for (StringSubscription ss : subscriptions){

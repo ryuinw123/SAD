@@ -14,7 +14,7 @@ public class AlphabetSubscriber extends StringSubscriber{
 
         super.subscription = (StringSubscription) subscription;
 
-
+        // ส่วนนี้แค่ทำให้ File Alphabet.txt เป็นไฟล์เปล่า
         try {
             FileWriter myWriter = new FileWriter("Alphabet.txt");
             myWriter.write("");
@@ -25,13 +25,14 @@ public class AlphabetSubscriber extends StringSubscriber{
             e.printStackTrace();
         }
 
-
+        //ขอ Arraylist กับ subscription
         subscription.request(1);
 
     }
 
     @Override
     public void onNext(Object item) {
+        //เขียนไฟล์จาก String
         try {
             FileWriter myWriter = new FileWriter("Alphabet.txt",true);
             ArrayList<String> as = (ArrayList<String>) item;
@@ -41,6 +42,7 @@ public class AlphabetSubscriber extends StringSubscriber{
             }
             myWriter.close();
             System.out.println("Successfully wrote to the file.");
+            //ขอ Arraylist จาก Subscription
             subscription.request(1);
         } catch (IOException e) {
             System.out.println("An error occurred.");

@@ -2,7 +2,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.Flow;
-import java.util.function.Consumer;
 
 public class NumberSubscriber extends StringSubscriber{
     public NumberSubscriber() {
@@ -14,7 +13,7 @@ public class NumberSubscriber extends StringSubscriber{
 
         super.subscription = (StringSubscription) subscription;
 
-
+        // ทำให้ไฟล์ Number.txt เป็นไฟล์เปล่า
         try {
             FileWriter myWriter = new FileWriter("Number.txt");
             myWriter.write("");
@@ -25,13 +24,14 @@ public class NumberSubscriber extends StringSubscriber{
             e.printStackTrace();
         }
 
-
+        //ขอ Arraylist จาก Subscription
         subscription.request(1);
 
     }
 
     @Override
     public void onNext(Object item) {
+        //เขียนไฟล์ Number.txt จาก ArrayList<String> item
         try {
             FileWriter myWriter = new FileWriter("Number.txt",true);
             ArrayList<String> as = (ArrayList<String>) item;
@@ -39,9 +39,12 @@ public class NumberSubscriber extends StringSubscriber{
                 myWriter.write(s);
                 myWriter.write("\n");
             }
+
             myWriter.close();
             System.out.println("Successfully wrote to the file.");
+            //ขอ Arraylist จาก Subscription
             subscription.request(1);
+
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();

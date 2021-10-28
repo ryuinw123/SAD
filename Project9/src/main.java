@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
+
         //สร้างไฟล์ใหม่
         try {
             File myObj = new File("Alphabet.txt");
@@ -67,5 +68,6 @@ public class main {
             publisher.submit(username);
             username = myObj.nextLine();
         }
+        
     }
 }

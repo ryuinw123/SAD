@@ -8,8 +8,6 @@ public class StringSubscription implements Flow.Subscription {
     private ArrayList<String> stringStream;
     private String want;
 
-
-
     public StringSubscription(StringSubscriber subscriber) {
         this.subscriber = subscriber;
         this.stringStream = new ArrayList<>();

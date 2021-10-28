@@ -5,12 +5,12 @@ import java.util.regex.Pattern;
 
 public class StringPublisher implements Flow.Publisher {
 
-    private ArrayList<Flow.Subscriber> subscribers;
-    private ArrayList<StringSubscription> subscriptions;
+    private ArrayList<Flow.Subscriber> subscribers;//เป็นตัวที่เก็บไว้ว่าตัว Publisher มีอะไร Subscribe บ้าง เพื่อเช็คว่าซ้ำไหม
+    private ArrayList<StringSubscription> subscriptions;//เก็บตัว subscriptions ไว้ เมื่อกรองข้อมูลเสร็จแล้วจะส่งข้อมูลให้ subscriptions
 
     public StringPublisher() {
-        subscribers = new ArrayList<>(); //เป็นตัวที่เก็บไว้ว่าตัว Publisher มีอะไร Subscribe บ้าง เพื่อเช็คว่าซ้ำไหม
-        subscriptions = new ArrayList<>(); //เก็บตัว subscriptions ไว้ เมื่อกรองข้อมูลเสร็จแล้วจะส่งข้อมูลให้ subscriptions
+        subscribers = new ArrayList<>();
+        subscriptions = new ArrayList<>();
     }
 
     @Override

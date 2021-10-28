@@ -13,18 +13,7 @@ public class SymbolSubscriber extends StringSubscriber{
 
         super.subscription = (StringSubscription) subscription;
 
-
-        try {
-            FileWriter myWriter = new FileWriter("Symbol.txt");
-            myWriter.write("");
-            myWriter.close();
-            System.out.println("New file");
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-
-
+        //ขอ Arraylist กับ subscription
         subscription.request(1);
 
     }

@@ -14,16 +14,6 @@ public class AlphabetSubscriber extends StringSubscriber{
 
         super.subscription = (StringSubscription) subscription;
 
-        // ส่วนนี้แค่ทำให้ File Alphabet.txt เป็นไฟล์เปล่า
-        try {
-            FileWriter myWriter = new FileWriter("Alphabet.txt");
-            myWriter.write("");
-            myWriter.close();
-            System.out.println("New file");
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
 
         //ขอ Arraylist กับ subscription
         subscription.request(1);

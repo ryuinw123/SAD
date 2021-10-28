@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -29,6 +30,23 @@ public class main {
             e.printStackTrace();
         }
 
+        //ทำให้ไฟล์ว่างเปล่า
+        try {
+            FileWriter myWriter = new FileWriter("Symbol.txt");
+            myWriter.write("");
+            myWriter.close();
+            FileWriter myWriter2 = new FileWriter("Alphabet.txt");
+            myWriter2.write("");
+            myWriter.close();
+            FileWriter myWriter3 = new FileWriter("Number.txt");
+            myWriter3.write("");
+            myWriter.close();
+            System.out.println("New file");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+
         //สร้าง Publisher กับ Subscriber
         StringPublisher publisher = new StringPublisher();
         NumberSubscriber a = new NumberSubscriber();
@@ -49,6 +67,5 @@ public class main {
             publisher.submit(username);
             username = myObj.nextLine();
         }
-
     }
 }

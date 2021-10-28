@@ -13,17 +13,6 @@ public class NumberSubscriber extends StringSubscriber{
 
         super.subscription = (StringSubscription) subscription;
 
-        // ทำให้ไฟล์ Number.txt เป็นไฟล์เปล่า
-        try {
-            FileWriter myWriter = new FileWriter("Number.txt");
-            myWriter.write("");
-            myWriter.close();
-            System.out.println("New file");
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-
         //ขอ Arraylist จาก Subscription
         subscription.request(1);
 

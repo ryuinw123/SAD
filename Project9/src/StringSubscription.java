@@ -7,6 +7,7 @@ public class StringSubscription implements Flow.Subscription {
     private boolean completed;
     private ArrayList<String> stringStream;
     private String want;
+    private boolean isRequest;
 
     public StringSubscription(StringSubscriber subscriber) {
         this.subscriber = subscriber;
@@ -27,8 +28,14 @@ public class StringSubscription implements Flow.Subscription {
                     stream.add(stringStream.remove(0));
                 }
                 subscriber.onNext(stream);
+                isRequest = false;
             }
         }
+
+        if (n!=0 && stringStream.size() == 0){
+            isRequest = true;
+        }
+
     }
 
     @Override
@@ -39,7 +46,9 @@ public class StringSubscription implements Flow.Subscription {
     //รับค่าจาก String Publisher ใส่ค่าให้ Arraylist Subscription
     public void add(String message){
         stringStream.add(message);
-        this.request(1);
+        if (isRequest) {
+            this.request(1);
+        }
     }
 
     public String getWant() {

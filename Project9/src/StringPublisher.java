@@ -31,8 +31,7 @@ public class StringPublisher implements Flow.Publisher {
 
 
         for (StringSubscription ss : subscriptions){
-            Matcher stringMatcher = ss.getPattern().matcher(message);
-            if (stringMatcher.find()){
+            if (ss.getPattern().matcher(message).find()){
                 ss.add(message);
             }
         }

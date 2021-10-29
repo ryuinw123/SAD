@@ -2,10 +2,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.Flow;
+import java.util.regex.Pattern;
 
 public class SymbolSubscriber extends StringSubscriber{
     public SymbolSubscriber() {
-        super.want = "Symbol";
+        super.pattern = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE);
     }
 
     @Override

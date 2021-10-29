@@ -1,18 +1,19 @@
 import java.util.ArrayList;
 import java.util.concurrent.Flow;
+import java.util.regex.Pattern;
 
 public class StringSubscription implements Flow.Subscription {
 
     private final StringSubscriber subscriber;
     private boolean completed;
     private ArrayList<String> stringStream;
-    private String want;
     private boolean isRequest;
+    private Pattern pattern;
 
     public StringSubscription(StringSubscriber subscriber) {
         this.subscriber = subscriber;
         this.stringStream = new ArrayList<>();
-        this.want = subscriber.getWant();
+        this.pattern = subscriber.getPattern();
     }
 
     //ฟังก์ชั่น request เป็นการส่งค่าจาก Arraylist stringStream ให้ Subscriber
@@ -52,11 +53,11 @@ public class StringSubscription implements Flow.Subscription {
         }
     }
 
-    public String getWant() {
-        return want;
+    public Pattern getPattern() {
+        return pattern;
     }
 
-    public void setWant(String want) {
-        this.want = want;
+    public void setPattern(Pattern pattern) {
+        this.pattern = pattern;
     }
 }

@@ -1,9 +1,10 @@
 import java.util.concurrent.Flow;
+import java.util.regex.Pattern;
 
 public abstract class StringSubscriber implements Flow.Subscriber {
 
-    protected String want;
     protected StringSubscription subscription;
+    protected Pattern pattern;
 
     @Override
     public abstract void onSubscribe(Flow.Subscription subscription);
@@ -21,11 +22,11 @@ public abstract class StringSubscriber implements Flow.Subscriber {
         System.out.println("Finish");
     }
 
-    public String getWant() {
-        return want;
+    public Pattern getPattern() {
+        return pattern;
     }
 
-    public void setWant(String want) {
-        this.want = want;
+    public void setPattern(Pattern pattern) {
+        this.pattern = pattern;
     }
 }

@@ -2,11 +2,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.Flow;
+import java.util.regex.Pattern;
 
 public class AlphabetSubscriber extends StringSubscriber{
 
+
     public AlphabetSubscriber() {
-        super.want = "Alphabet";
+        super.pattern = Pattern.compile("[a-z]",Pattern.CASE_INSENSITIVE);
     }
 
     @Override
@@ -39,5 +41,7 @@ public class AlphabetSubscriber extends StringSubscriber{
             e.printStackTrace();
         }
     }
+
+
 
 }

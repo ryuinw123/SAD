@@ -2,10 +2,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.Flow;
+import java.util.regex.Pattern;
 
 public class NumberSubscriber extends StringSubscriber{
     public NumberSubscriber() {
-        super.want = "Number";
+        super.pattern = Pattern.compile("[0-9]+");
     }
 
     @Override

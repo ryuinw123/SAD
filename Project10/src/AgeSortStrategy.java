@@ -5,9 +5,8 @@ import java.util.List;
 public class AgeSortStrategy implements SortStrategy {
     // YOU MAY ADD UP TO 5 LINES OF CODE BELOW THIS COMMENT !! A LINE OF CODE MAY CONTAIN UP TO ONE SEMI-COLON !!
     public void customSort(List<Person> people){
-        people.sort(new Comparator<Person>() {
-            public int compare(Person o1, Person o2) { return o1.getAge().compareTo(o2.getAge()); }
-        });
+        Comparator<Person> peopleComparator = Comparator.comparing(Person::getAge);
+        people.sort(peopleComparator);
     }
 
 }

@@ -13,7 +13,6 @@ public class NumberSubscriber extends StringSubscriber{
     public void onSubscribe(Flow.Subscription subscription) {
 
         super.subscription = (StringSubscription) subscription;
-
         //ขอ Arraylist จาก Subscription
         subscription.request(1);
 

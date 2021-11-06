@@ -15,11 +15,8 @@ public class AlphabetSubscriber extends StringSubscriber{
     public void onSubscribe(Flow.Subscription subscription) {
 
         super.subscription = (StringSubscription) subscription;
-
-
         //ขอ Arraylist กับ subscription
         subscription.request(1);
-
     }
 
     @Override

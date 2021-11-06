@@ -36,7 +36,6 @@ public class StringSubscription implements Flow.Subscription {
         if (n!=0 && stringStream.size() == 0){
             isRequest = true;
         }
-
     }
 
     @Override

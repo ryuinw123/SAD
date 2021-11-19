@@ -32,6 +32,7 @@ public class JSONBookMetadataFormatter implements BookMetadataFormatter {
         jsonObject.put(Book.Metadata.PUBLISHER.value,b.getPublisher());
         bookList.add(jsonObject);
         return this;
+
     }
 
     @Override

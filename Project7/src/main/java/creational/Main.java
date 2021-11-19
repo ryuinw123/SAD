@@ -2,10 +2,11 @@ package creational;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
 //         Current usage
 //        BookMetadataFormatter formatter = null;
@@ -24,15 +25,13 @@ public class Main {
 
         // Expected usage
         BookMetadataExporter exporter = new JSONBookMetadataExporter();
-        try{
-            exporter.add(TestData.dragonBook);
-            exporter.add(TestData.dinosaurBook);
+        exporter.add(TestData.dragonBook);
+        exporter.add(TestData.dinosaurBook);
+        try {
             exporter.export(System.out);
-        }
-        catch (ParserConfigurationException e) {
+        } catch (ParserConfigurationException e) {
             e.printStackTrace();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

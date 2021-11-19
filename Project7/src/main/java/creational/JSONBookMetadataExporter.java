@@ -1,19 +1,14 @@
 package creational;
 
+import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Iterator;
 
 public class JSONBookMetadataExporter extends BookMetadataExporter{
     private JSONBookMetadataFormatter JSONBook;
 
-    @Override
-    public void export(PrintStream stream) {
+    public JSONBookMetadataExporter() {
         JSONBook = new JSONBookMetadataFormatter();
-        Iterator<Book> bookIterator = books.iterator();
-        while (bookIterator.hasNext())
-        {
-            JSONBook.append(bookIterator.next());
-        }
-        stream.print(JSONBook.getMetadataString());
+        bookMetadataFormatter = JSONBook;
     }
 }

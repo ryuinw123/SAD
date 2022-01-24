@@ -1,4 +1,4 @@
-รวมงานของวิชา SOFTWARE ARCHITECTURE AND DESIGN\
+รวมงานของวิชา SOFTWARE ARCHITECTURE AND DESIGN ปี 3 เทอม 1\
 \
 Project 6 ให้ทำให้โค้ดถูกหลักตามโจทย์ (SOLID Principles)\
 -SRP\

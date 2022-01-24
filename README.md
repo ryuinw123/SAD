@@ -16,4 +16,4 @@ Project 10 Behavior Design Patterns 2\
 -Strategy pattern.\
 \
 Open Source Project Analysis\
--BlueJ\
+-BlueJ
